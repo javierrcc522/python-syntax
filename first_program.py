@@ -187,3 +187,73 @@ for num in l:
 8
 9
 10
+
+for num in l:
+    if num % 2 == 0:
+        print num
+    else:
+        print 'Odd number'
+
+#adding numbers from the list
+list_sum = 0
+
+for num in l:
+    list_sum = list_sum + num
+print list_sum
+
+## looping in a string
+s = 'this is a string'
+for letter in s:
+    print letter
+
+##looping through DICTIONARY
+
+d = {'k1':1,'k2':2,'k3':3}
+
+for k,v in d.items():
+    print(k)
+    print(v)
+k1
+1
+k2
+2
+k3
+3
+
+##looping through Tuples
+l = [(2,4),(6,8),(10,12)]
+
+for tup in l:
+    print tup
+(2, 4)
+(6, 8)
+(10, 12)
+
+# Now with unpacking!
+for (t1,t2) in l:
+    print t1
+2
+6
+10
+
+##while loop keeps performing until the condition is meet
+
+x = 0
+
+while x <= 5:
+    print('x is currently: ',x)
+    x+=1
+
+# x is currently:  0
+# x is currently:  1
+# x is currently:  2
+# x is currently:  3
+# x is currently:  4
+# x is currently:  5
+
+x = 0
+while x < 4:
+    print('x is currently:', x)
+    x+=1
+else:
+    print('All done!')
