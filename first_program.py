@@ -93,6 +93,7 @@ x.add(1)
 x
 {1}
 # Note the curly brackets. This does not indicate a dictionary! Although you can draw analogies as a set being a dictionary with only keys.
+# mapping no sequence so cant sort
 # Add a different element
 x.add(2)
 x
@@ -106,3 +107,83 @@ l = [1,1,2,2,3,4,5,6,1,1]
 # Cast as set to get unique values
 set(l)
 {1, 2, 3, 4, 5, 6}
+
+##comparasin operators
+
+ <> same as !=
+## Chaining operators
+1 < 2 < 3
+
+1<2 and 2<3
+
+1==2 or 2<3
+
+## Python statemns
+    #js
+    if (a>b){
+    a = 2;
+    b = 4;
+}
+    #python
+    if a>b:
+        a = 2
+        b = 4
+
+# Js
+if (x)
+    if(y)
+        code-statement;
+else
+    another-code-statement;
+
+# Python
+if x:
+    if y:
+        code-statement
+else:
+    another-code-statement
+
+# if,elif,else Statements
+if case1:
+    perform action1
+elif case2:
+    perform action2
+else:
+    perform action 3
+
+
+x = False
+if x:
+    print 'x was True!'
+else:
+    print 'I will be printed in any case where x is not true'
+# i will be printed in anycase where x ..
+
+
+loc = 'Bank'
+
+if loc == 'Auto Shop':
+    print 'Welcome to the Auto Shop!'
+elif loc == 'Bank':
+    print 'Welcome to the bank!'
+else:
+    print "Where are you?"
+
+## prints welcome to the bank ....
+
+##For loops iterate through items
+
+l = [1,2,3,4,5,6,7,8,9,10]
+
+for num in l:
+    print num
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
