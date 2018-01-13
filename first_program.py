@@ -238,6 +238,10 @@ for (t1,t2) in l:
 
 ##while loop keeps performing until the condition is meet
 
+# BREAKS: Breaks out of the current closest enclosing loop.
+# CONTINUE: Goes to the top of the closest enclosing loop.
+# PASS: Does nothing at all.
+
 x = 0
 
 while x <= 5:
@@ -257,3 +261,45 @@ while x < 4:
     x+=1
 else:
     print('All done!')
+
+# continuing
+x = 0
+while x < 10:
+    print 'x is currently: ',x
+    print ' x is still less than 10, adding 1 to x'
+    x+=1
+    if x ==3:
+        print 'x==3'
+    else:
+        print 'continuing...'
+        continue
+#RANGE specify up to
+range(start=0, stop, step=1)
+
+x = range(11)
+list(x)
+
+range(x,y)
+
+#LIST COMPRIHENTION
+# I can do this or
+l = []
+for letter in 'word':
+    l.append(letter)
+
+print(l)
+# same thing less code flatting out the for loop
+l = [letter for letter in 'word']
+
+# square a numbers
+lst = [x**2 for x in range(0,11)]
+
+# Check for even numbers in a range
+lst = [x for x in range(11) if x % 2 == 0]
+
+# Convert Celsius to Fahrenheit
+celsius = [0,10,20.1,34.5]
+
+fahrenheit = [ ((float(9)/5)*temp + 32) for temp in celsius ]
+
+#Methods are essentially functions build in objects
