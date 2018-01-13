@@ -303,3 +303,74 @@ celsius = [0,10,20.1,34.5]
 fahrenheit = [ ((float(9)/5)*temp + 32) for temp in celsius ]
 
 #Methods are essentially functions build in objects
+#to get info about that method if i dont know it
+help(count)
+
+
+# functions are so we dont have to write the same code over and over
+# The comment inside the function will be save to later reference
+def name_of_function(arg1,arg2):
+    '''
+    This is where the function's Document String (doc-string) goes
+    '''
+name_of_function(1+2)
+
+#writing basic function to great a person by their name
+def greeting(name):
+    print('Hello %s' %name)
+
+greeting('Jose')
+
+#return is a result of usually a function that can be stored as a variable
+return
+
+# finding a prime
+def is_prime(num):
+    for numero in range(2,num):
+        if  num % numero == 0:
+            print('Not a prime')
+            break
+    else:
+        print('This is a prime!')
+
+is_prime(18)
+
+#using lambda
+#1
+def square(num):
+    result = num**2
+    return result
+
+#2
+def square(num):
+    return num**2
+
+#3
+def square(num): return num**2
+
+#4 lambda
+square = lambda num: num**2
+
+# name/item or object/ and what you want to do to that object
+
+
+#checking if number are even
+even = lambda x: x%2==0
+
+#geting the first index of a string
+first = lambda s: s[0]
+
+#reversing a string
+rev = lambda s: s[::-1]
+
+#add 2 numbers
+adder = lambda x,y : x+y
+
+###NESTED STATEMENTS & SCOPE
+# L: Local — Names assigned in any way within a function (def or lambda)), and not declared global in that function.
+#
+# E: Enclosing function locals — Name in the local scope of any and all enclosing functions (def or lambda), from inner to outer.
+#
+# G: Global (module) — Names assigned at the top-level of a module file, or declared global in a def within the file.
+#
+# B: Built-in (Python) — Names preassigned in the built-in names module : open,range,SyntaxError,...
