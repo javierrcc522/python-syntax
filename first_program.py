@@ -380,7 +380,7 @@ adder = lambda x,y : x+y
 class Dog(object):
 
     # Class Object Attribute
-    species = 'mammal' # basically all the no matter what name or breed they will all be a mammal
+    species = 'mammal' # basically all the no matter what name or breed they will all be a mammal orrr something that is true for any instance of the class
 
     def __init__(self,breed,name): # this is the method
         self.breed = breed  # value is pass through class instanciation
@@ -389,11 +389,27 @@ class Dog(object):
 sam = Dog('Lab','Sam')  #  sam is an instance of the Dog object type and it has 2 Attributes
 
 sam.name
-
 'Sam'
 # Note that the Class Object Attribute is defined outside of any methods in the class. Also by convention, we place them first before the init.
-
-
 sam.species
-
 'mammal'
+
+#class circle
+
+class Circle(object):
+    pi = 3.14
+
+    # Circle get instantiated with a radius (default is 1)
+    def __init__(self, radius=1):
+        self.radius = radius
+
+    # Area method calculates the area. Note the use of self.
+    def area(self):
+        return (self.radius**2) * Circle.pi
+
+    def perimeter(self):
+        return 2 * (self.radius) * (Circle.pi)
+
+    #c8 = Circle(radius = 100)
+    #c8.perimeter()
+    628.0
