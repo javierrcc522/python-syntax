@@ -374,3 +374,26 @@ adder = lambda x,y : x+y
 # G: Global (module) — Names assigned at the top-level of a module file, or declared global in a def within the file.
 #
 # B: Built-in (Python) — Names preassigned in the built-in names module : open,range,SyntaxError,...
+
+#OBJECTS
+
+class Dog(object):
+
+    # Class Object Attribute
+    species = 'mammal' # basically all the no matter what name or breed they will all be a mammal
+
+    def __init__(self,breed,name): # this is the method
+        self.breed = breed  # value is pass through class instanciation
+        self.name = name
+
+sam = Dog('Lab','Sam')  #  sam is an instance of the Dog object type and it has 2 Attributes
+
+sam.name
+
+'Sam'
+# Note that the Class Object Attribute is defined outside of any methods in the class. Also by convention, we place them first before the init.
+
+
+sam.species
+
+'mammal'
