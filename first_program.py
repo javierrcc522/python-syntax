@@ -413,3 +413,13 @@ class Circle(object):
     #c8 = Circle(radius = 100)
     #c8.perimeter()
     628.0
+
+# string fucntions
+#method                 True if
+str.isalnum()	String consists of only alphanumeric characters (no symbols)
+str.isalpha()	String consists of only alphabetic characters (no symbols)
+str.islower()	String’s alphabetic characters are all lower case
+str.isnumeric()	String consists of only numeric characters
+str.isspace()	String consists of only whitespace characters
+str.istitle()	String is in title case
+str.isupper()	String’s alphabetic characters are all upper case
