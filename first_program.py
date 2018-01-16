@@ -2,6 +2,7 @@ i = [1,2,3]
 
 s = 'hello world'
 
+#SLICing a number
 s[3:]
 #the : means grap everything from index
 
@@ -414,7 +415,7 @@ class Circle(object):
     #c8.perimeter()
     628.0
 
-# string fucntions
+# STRING FUNCTIONS
 #method                 True if
 str.isalnum()	String consists of only alphanumeric characters (no symbols)
 str.isalpha()	String consists of only alphabetic characters (no symbols)
@@ -423,3 +424,94 @@ str.isnumeric()	String consists of only numeric characters
 str.isspace()	String consists of only whitespace characters
 str.istitle()	String is in title case
 str.isupper()	String’s alphabetic characters are all upper case
+
+# USING VARIABLES
+glb_var = "global"
+
+def var_function():
+    lcl_var = "local"
+    print(lcl_var)
+    print(glb_var) #Print glb_var within function
+
+var_function()
+
+########
+def new_shark():
+    #Assign variable as global
+    global shark
+    shark = "Sammy"
+
+#Call new_shark() function
+new_shark()
+
+#Print global variable shark
+print(shark)
+
+
+
+# USING STRING FORMATTERS
+print("Sammy has {} balloons.".format(5))
+
+#using variable with formatters
+open_string = "Sammy loves {}."
+print(open_string.format("open source"))
+
+#using 2 formatters
+new_open_string = "Sammy loves {} {}."                      #2 {} placeholders
+print(new_open_string.format("open-source", "software"))    #Pass 2 strings into method, separated by a comma
+
+# now with 4 formatters
+sammy_string = "Sammy loves {} {}, and has {} {}."
+print(sammy_string.format("open-source", "software", 5, "balloons"))
+
+# changing the order of the string FORMATTERS by index
+print("Sammy is a {3}, {2}, and {1} {0}!".format("happy", "smiling", "blue", "shark"))
+
+# with a variable name of the formatters
+print("Sammy the {0} {1} a {pr}.".format("shark", "made", pr = "pull request"))
+
+# Format-Specification Mini-Language
+# with F converions
+print("Sammy ate {0:f} percent of a {1}!".format(75, "pizza"))
+
+
+print("Sammy ate {0:.4f} percent of a pizza!".format(75.765367))
+# floting the point 4 spaces
+
+print("Sammy ate {0:.0f} percent of a pizza!".format(75.765367))
+# setting it to 0
+
+# add space of 7
+print("Sammy has {0:7} red {1:16}!".format(5, "balloons"))
+
+# align left & center
+print("Sammy has {0:<4} red {1:^16}!".format(5, "balloons"))
+
+# fomatters with VARIABLES
+sammy = "Sammy has {} balloons today!"
+nBalloons = 8
+print(sammy.format(nBalloons))
+
+# Unary Arithmetic Operations
+i = 3.3
+print(-i) #result is -3.3
+
+# DIVMOD does the rimendir and the
+divmod(985.5,115.25)
+#result (8.0, 63.5)
+
+985.5 // 115.25
+# 8
+985.5 % 115.25
+# 63..
+
+# POW (power of **)
+hours = 24
+total_bacteria = pow(2,hours)
+
+print(total_bacteria)
+
+# SUM return sum of .. and it will work with tuple and dictionaries
+# it also take two arguments so
+some_floats = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9]
+print(sum(some_floats))
