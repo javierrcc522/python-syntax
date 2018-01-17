@@ -51,8 +51,22 @@ d
 ## This are tuples
 #they do have index and they can be mapped
 # they are immutable meaning they cant be alter or change
+# The primary way in which tuples are different from lists is that they cannot be modified. This means that items cannot be added to or removed from tuples, and items cannot be replaced within tuples.
+
+You can, however, concatenate 2 or more tuples to form a new tuple.
 t = (1,2,3)
 t[0]
+# concating tuples
+coral = ('blue coral', 'staghorn coral', 'pillar coral', 'elkhorn coral')
+kelp = ('wakame', 'alaria', 'deep-sea tangle', 'macrocystis')
+
+coral_kelp = (coral + kelp)
+
+print(coral_kelp)
+
+# max min methods for Tuples
+more_numbers = (11.13, 34.87, 95.59, 82.49, 42.73, 11.12, 95.57)
+print(max(more_numbers))
 
 ## This are FILES
 my_file = open('test.txt')
@@ -105,6 +119,20 @@ x
 {1, 2}
 # Create a list with repeats
 l = [1,1,2,2,3,4,5,6,1,1]
+
+# Functions to Access Elements
+
+dict.keys() #isolates keys
+dict.values() #isolates values
+dict.items() #returns items in a list format of (key, value) tuple pairs
+
+# dictionary looping the values
+for key, value in sammy.items():
+    print(key, 'is the key for the value', value)
+    #updating to a dictionary
+    dictionary.update({key:value})
+
+
 # Cast as set to get unique values
 set(l)
 {1, 2, 3, 4, 5, 6}
@@ -221,6 +249,22 @@ k2
 k3
 3
 
+#make your own for loop
+integers = []
+
+for i in range(10):
+   integers.append(i)
+
+print(integers)
+
+#nested for loops
+
+list_of_lists = [['hammerhead', 'great white', 'dogfish'],[0, 1, 2],[9.9, 8.8, 7.7]]
+
+for list in list_of_lists:
+    for item in list:
+        print(item)
+
 ##looping through Tuples
 l = [(2,4),(6,8),(10,12)]
 
@@ -240,8 +284,8 @@ for (t1,t2) in l:
 ##while loop keeps performing until the condition is meet
 
 # BREAKS: Breaks out of the current closest enclosing loop.
-# CONTINUE: Goes to the top of the closest enclosing loop.
-# PASS: Does nothing at all.
+# CONTINUE: Goes to the top of the closest enclosing loop skips it .
+# PASS: Does nothing at all or disrigard the condition.
 
 x = 0
 
@@ -515,3 +559,92 @@ print(total_bacteria)
 # it also take two arguments so
 some_floats = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9]
 print(sum(some_floats))
+
+# LIST COMPRIHENTION
+    # take a string and turns it into a list
+shark_letters = [letter for letter in 'shark']
+print(shark_letters)
+
+    # this is how it would be done with a for loop to achive the same result
+shark_letters = []
+
+for letter in 'shark':
+    shark_letters.append(letter)
+
+print(shark_letters)
+
+# Using Conditionals with List Comprehensions
+fish_tuple = ('blowfish', 'clownfish', 'catfish', 'octopus')
+
+fish_list = [fish for fish in fish_tuple if fish != 'octopus']
+print(fish_list)
+
+# Nested Loops in a List Comprehension
+    # for each loop nested
+my_list = []
+
+for x in [20, 40, 60]:
+    for y in [2, 4, 6]:
+        my_list.append(x * y)
+
+print(my_list)
+    # nested loop as a Comprehension
+
+my_list = [x * y for x in [20, 40, 60] for y in [2, 4, 6]]
+print(my_list)
+
+### MODULES
+from random import randint #random file/module then the function name
+for i in range(10):
+    print(randint(1, 25))
+
+#Aliasing modules
+import math as m
+
+print(m.pi)
+print(m.e)
+
+# importing module in another directory
+import sys
+sys.path.append('/usr/sammy/')
+
+import hello
+
+# writing Conditionals Statements
+if statement1:                  #outer if
+    print("hello world")
+
+    if nested_statement1:       #first nested if
+        print("yes")
+
+    elif nested_statement2:     #first nested elif
+        print("maybe")
+
+    else:                       #first nested else
+        print("no")
+
+elif statement2:                #outer elif
+    print("hello galaxy")
+
+    if nested_statement3:       #second nested if
+        print("yes")
+
+    elif nested_statement4:     #second nested elif
+        print("maybe")
+
+    else:                       #second nested else
+        print("no")
+
+else:                           #outer else
+    statement("hello universe")
+### MAIN
+##Although in Python you can call the function at the bottom of your program and it will run (as we have done in the examples above), many programming languages (like C++ and Java) require a main function in order to execute. Including a main() function, though not required, can structure our Python programs in a logical way that puts the most important components of the program into one function. It can also make our programs easier for non-Python programmers to read.
+
+def hello():
+    print("Hello, World!")
+
+def main():
+    print("This is the main function.")
+    hello()
+
+main()
