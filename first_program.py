@@ -420,7 +420,7 @@ adder = lambda x,y : x+y
 #
 # B: Built-in (Python) — Names preassigned in the built-in names module : open,range,SyntaxError,...
 
-#OBJECTS
+#Constructor Method
 
 class Dog(object):
 
@@ -442,7 +442,7 @@ sam.species
 #class circle
 
 class Circle(object):
-    pi = 3.14
+    pi = 3.14 ###class variable
 
     # Circle get instantiated with a radius (default is 1)
     def __init__(self, radius=1):
@@ -459,6 +459,46 @@ class Circle(object):
     #c8.perimeter()
     628.0
 
+### more exples with constructor
+class Shark:
+    def __init__(self, name):
+        self.name = name
+
+    def swim(self):
+        print(self.name + " is swimming.")
+
+    def be_awesome(self):
+        print(self.name + " is being awesome.")
+
+
+def main():
+    # Set name of Shark object
+    sammy = Shark("Sammy")
+    sammy.swim()
+    sammy.be_awesome()
+
+if __name__ == "__main__":
+    main()
+
+### working with more than 1 object
+class Shark:
+    def __init__(self, name):
+        self.name = name
+
+    def swim(self):
+        print(self.name + " is swimming.")
+
+    def be_awesome(self):
+        print(self.name + " is being awesome.")
+
+def main():
+    sammy = Shark("Sammy")
+    sammy.be_awesome()
+    stevie = Shark("Stevie")
+    stevie.swim()
+
+if __name__ == "__main__":
+  main()
 # STRING FUNCTIONS
 #method                 True if
 str.isalnum()	String consists of only alphanumeric characters (no symbols)
@@ -648,3 +688,170 @@ def main():
     hello()
 
 main()
+
+#using *args you can replace the arguments to something more flixible
+def multiply(*args):
+    z = 1
+    for num in args:
+        z *= num
+    print(z)
+
+multiply(4, 5)
+multiply(10, 9)
+multiply(2, 3, 4)
+multiply(3, 5, 10, 6)
+
+##using **kwargs
+def print_kwargs(**kwargs):
+        print(kwargs)
+
+print_kwargs(kwargs_1="Shark", kwargs_2=4.5, kwargs_3=True)
+
+###Classes
+class Shark:
+    def swim(self):
+        print("The shark is swimming.")
+
+    def be_awesome(self):
+        print("The shark is being awesome.")
+
+
+def main():
+    sammy = Shark()
+    sammy.swim()
+    sammy.be_awesome()
+
+if __name__ == "__main__":
+    main()
+###Class Inheritance
+
+class Fish:
+    def __init__(self, first_name, last_name="Fish",
+                 skeleton="bone", eyelids=False):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.skeleton = skeleton
+        self.eyelids = eyelids
+
+    def swim(self):
+        print("The fish is swimming.")
+
+    def swim_backwards(self):
+        print("The fish can swim backwards.")
+# class trout Inherates from the fish
+class Trout(Fish):
+    pass
+
+terry = Trout("Terry")
+print(terry.first_name + " " + terry.last_name)
+print(terry.skeleton)
+print(terry.eyelids)
+terry.swim()
+terry.swim_backwards()
+
+# using super classes
+class Trout(Fish):
+    def __init__(self, water = "freshwater"):
+        self.water = water
+        super().__init__(self)
+
+terry = Trout()
+
+# Initialize first name
+terry.first_name = "Terry"
+
+# Use parent __init__() through super()
+print(terry.first_name + " " + terry.last_name)
+print(terry.eyelids)
+
+# Use child __init__() override
+print(terry.water)
+
+# Use parent swim() method
+terry.swim()
+
+# over riding the parent fish in this case
+class Shark(Fish):
+    def __init__(self, first_name, last_name="Shark",
+                 skeleton="cartilage", eyelids=True):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.skeleton = skeleton
+        self.eyelids = eyelids
+
+    def swim_backwards(self):
+        print("The shark cannot swim backwards, but can sink backwards.")
+
+##multiple Inheritance or parents
+class Coral:
+
+    def community(self):
+        print("Coral lives in a community.")
+
+
+class Anemone:
+
+    def protect_clownfish(self):
+        print("The anemone is protecting the clownfish.")
+
+
+class CoralReef(Coral, Anemone):
+    pass
+
+#Creating Polymorphic Classes
+class Shark():
+    def swim(self):
+        print("The shark is swimming.")
+
+    def swim_backwards(self):
+        print("The shark cannot swim backwards, but can sink backwards.")
+
+    def skeleton(self):
+        print("The shark's skeleton is made of cartilage.")
+
+
+class Clownfish():
+    def swim(self):
+        print("The clownfish is swimming.")
+
+    def swim_backwards(self):
+        print("The clownfish can swim backwards.")
+
+    def skeleton(self):
+        print("The clownfish's skeleton is made of bone.")
+
+
+sammy = Shark()
+sammy.skeleton()
+
+casey = Clownfish()
+casey.skeleton()
+### debugging with
+pbd
+
+#to stop the code and access the variables
+import code
+code.interact(local=locals())
+
+# banner can be set to a string, so that you can flag where the interpreter launches
+# readfunc can be used as the InteractiveConsole.raw_input() method
+# local will set the default namespace for the interpreter loop
+# exitmsg can be set to a string to note where the interpreter ends
+# With the local parameter, you can use, for example:
+#
+# local=locals() for a local namespace
+# local=globals() for a global namespace
+# local=dict(globals(), **locals()) to use both the global namespace and the present local namespace
+
+#logg
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
+
+logging.basicConfig(filename="test.log", level=logging.DEBUG) #log them into a file
+# Table of Logging Levels
+# CRITICAL	50	logging.critical()	Show a serious error, the program may be unable to continue running
+# ERROR	40	logging.error()	Show a more serious problem
+# WARNING	30	logging.warning()	Indicate something unexpected happened, or could happen
+# INFO	20	logging.info()	Confirm that things are working as expected
+# DEBUG	10	logging.debug()	Diagnose problems, show detailed information
